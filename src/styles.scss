@@ -3,5 +3,65 @@
 body {
     background-color: rgb(52, 55, 58);
     font-family: 'Ubuntu', sans-serif;
+    color: rgb(232, 232, 232);
+    position: relative;
+}
 
+h1 {
+    font-size: 28px;
+}
+
+.automargin {
+    margin: auto;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.side-menu {
+    width: 180px;
+    height: 100vh;
+    border-right: solid 1px rgb(126, 126, 126);
+    padding: 30px 10px;
+    float: left;
+    position: relative;
+
+    .logo {
+        margin-bottom: 20px;
+    }
+
+    .projects-dir {
+        margin-top: 50px;
+    }
+
+    .new-todo-button {
+        width: 50px;
+        height: 50px;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 56px;
+        line-height: 44px;
+        position: absolute;
+        bottom: 300px;
+        border: 2px solid #fff;
+        margin-left: -28px;
+        left: 50%;
+
+    }
+}
+
+.main {
+    padding: 50px;
+    width: 75%;
+    height: 100vh;
+    margin-left: 1px ;
+    float: left;
+    
+    .task {
+        width: 400px;
+        height: 60px;
+        border: 1px solid rgb(159, 159, 159);
+        border-radius: 5px;
+    }
 }
