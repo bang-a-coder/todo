@@ -7,7 +7,13 @@ class DomCreator {
 
     add(task){
         this.taskList.push(task)
-        createTaskVisual(this.displayArea)
+        createTaskVisual(this.displayArea, task.indexVal)
+    }
+
+    remove(idxVal) {
+        this.taskList = this.bookcase.filter(item => item.indexVal != idxVal)
+        let ripDaddy = document.querySelector(`div[data-index="${idxVal}"]`);
+        ripDaddy.parentElement.removeChild(ripDaddy)
     }
     
 
@@ -18,13 +24,15 @@ class DomCreator {
     
 }
 
-function createTaskVisual(parent){
+function createTaskVisual(parent,idxVal){
     let domInstanse = document.createElement('div')
     let descriptionDiv = document.createElement('span')
 
     let topDetails = document.createElement('div') 
         let left = document.createElement('div')
         let right = document.createElement('div')
+
+    domInstanse.dataset.index = idxVal
 
     domInstanse.classList.add('task')
 
