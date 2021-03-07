@@ -1,12 +1,17 @@
 import "./styles.scss";
-import {DomCreator} from './dom-manipulator.js'
-import {Task, createTaksVisual} from './task.js'
+import {DomCreator,createTaskVisual} from './dom-manipulator.js'
+import {Task} from './task.js'
 
 
 let dom = new DomCreator()
 
-dom.createButton.addEventListener('click', () => {
+dom.createButton.addEventListener('click', () => {god()})
+
+function god(){
     let a = new Task()
-    createTaksVisual(dom.displayArea)
-})
+    dom.add(a)
+    console.log(dom.taskList)
+}
+
+god()
 
