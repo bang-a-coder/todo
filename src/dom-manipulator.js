@@ -5,6 +5,12 @@ class DomCreator {
     }
 
     
+
+    appendToMain(thing){
+        this.displayArea.appendChild(thing)
+    }
+
+    
 }
 
 export {DomCreator}

@@ -7,6 +7,6 @@ let dom = new DomCreator()
 
 dom.createButton.addEventListener('click', () => {
     let a = new Task()
-    dom.displayArea.appendChild(a.domInstanse)
+    dom.appendToMain(a.domInstanse)
 })
 
