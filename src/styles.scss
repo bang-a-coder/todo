@@ -53,7 +53,7 @@ h1 {
     
     .task {
         width: 600px;
-        height: 40px;
+        height: 50px;
         border: 1px solid rgb(159, 159, 159);
         border-radius: 5px;
         display: flex;
@@ -63,7 +63,8 @@ h1 {
         align-items: stretch;
         align-content: stretch;
         margin-bottom: 5px;
-        padding: 0 8px;
+        padding: 10px 20px 10px 8px;
+        box-sizing: border-box;
 
         .check-icon {
             fill: #fff;
@@ -80,15 +81,63 @@ h1 {
             display: flex;
             flex-direction: row;
             flex-wrap: nowrap;
-            justify-content: flex-start;
+            justify-content: space-between;
             align-items: center;
             align-content: stretch;
+
+            .left {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                justify-content: flex-start;
+                align-items: center;
+                align-content: stretch;
+            }
+
+            .right {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                justify-content: flex-start;
+                align-items: center;
+                align-content: stretch;
+
+                .due-date {
+                    margin-left: 20px;
+                }
+            }
            
         }
-    }
 
+
+        .textarea {
+        width: 70%;
+        overflow: hidden;
+        resize: both;
+        min-height: 40px;
+        line-height: 20px;
+        resize: none;
+        margin-top: 20px;
+        margin-left: 20px;
+
+            &:focus {
+                border: none;
+                outline: none;
+                background-color: rgb(60, 63, 65);
+
+            }
+
+            
+        }
+
+        .textarea[contenteditable]:empty::before {
+            content: "Description";
+            color: gray;
+          }
+    }
     .expand {
-        height: 100px;
+        height: fit-content;
+        min-height: 100px;
         transition: all ease-in-out 0.2s;
     }
 
@@ -107,6 +156,10 @@ h1 {
 
 .automargin {
     margin: auto;
+}
+
+.displayN {
+    display: none;
 }
 
 .text-center {
@@ -130,4 +183,53 @@ h1 {
 	justify-content: center;
 	align-items: center;
 	align-content: center;
+}
+
+select {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 15px;
+    width: 100%;
+}    select select {
+        font-family: 'Arial';
+        display: inline-block;
+        width: 100%;
+        cursor: pointer;
+        padding: 10px 15px;
+        outline: 0;
+        border: 0px solid #000000;
+        border-radius: 0px;
+        background: #757575;
+        color: #ffffff;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+    }
+         select select::-ms-expand {
+            display: none;
+        }
+         select select:hover,
+         select select:focus {
+            color: #000000;
+            background: #cccccc;
+        }
+        select select:disabled {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+.select_arrow {
+    position: absolute;
+    top: 16px;
+    right: 15px;
+    pointer-events: none;
+    border-style: solid;
+    border-width: 8px 5px 0px 5px;
+    border-color: #7b7b7b transparent transparent transparent;
+}
+.select select:hover ~ .select_arrow,
+.select select:focus ~ .select_arrow {
+    border-top-color: #000000;
+}
+.select select:disabled ~ .select_arrow {
+    border-top-color: #cccccc;
 }
