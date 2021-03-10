@@ -12,6 +12,7 @@ function god(){
     index++
     let a = new Task(index, dom.newTaskTitle.innerHTML)
     dom.add(a)
+    a.createTaskVisual(dom.displayArea)
     dom.newTaskTitle.innerHTML = ''
     console.log(dom.taskList)
     
