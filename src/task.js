@@ -1,6 +1,6 @@
 class Task {
-    constructor(indexVal){
-        this.nane = 'boi'
+    constructor(indexVal, title){
+        this.title = title
         this.discription = 'sample desciption'
         this.indexVal = indexVal
 

@@ -1,30 +1,43 @@
 class DomCreator {
     constructor(){
         this.displayArea = document.querySelector('.main')
-        this.createButton = document.querySelector('.new-todo-button')
+        //this.createTaskBtn = document.querySelector('.new-todo-button')
+        this.newTaskArea = document.querySelector(`.create-task`)
+        this.newTaskTitle = document.querySelector(`.textarea-new`)
+        this.createTaskBtn = document.querySelector(`#add-button`)
+
         this.taskList = []
+        this.detectFocus()
+
     }
 
     add(task){
         this.taskList.push(task)
-        createTaskVisual(this.displayArea, task.indexVal)
+        createTaskVisual(this.displayArea, task.indexVal, task.title)
     }
 
     remove(idxVal) {
-        this.taskList = this.bookcase.filter(item => item.indexVal != idxVal)
+        this.taskList = this.taskList.filter(item => item.indexVal != idxVal)
         let ripDaddy = document.querySelector(`div[data-index="${idxVal}"]`);
         ripDaddy.parentElement.removeChild(ripDaddy)
     }
     
-
     appendToMain(thing){
         this.displayArea.appendChild(thing)
     }
 
+    detectFocus(){
+        this.newTaskTitle.addEventListener('focus', function(){
+            console.log('im focused')
+        })
+
+    }
+    
+
     
 }
 
-function createTaskVisual(parent,idxVal){
+function createTaskVisual(parent,idxVal,ttle){
     let domInstanse = document.createElement('div')
     let descriptionDiv = document.createElement('span')
 
@@ -39,7 +52,7 @@ function createTaskVisual(parent,idxVal){
     topDetails.classList.add('top-details')
         left.classList.add('left')
         left.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" class="check-icon" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-.997-4L6.76 11.757l1.414-1.414 2.829 2.829 5.656-5.657 1.415 1.414L11.003 16z"/></svg>'
-        left.innerHTML += '<div class="task-title">An Important Thing</div>'
+        left.innerHTML += `<span class="textarea-new" role="textbox" contenteditable >${ttle}</span>`
         right.innerHTML = '<div class="due-date">27/01</div>'
     topDetails.appendChild(left)
     topDetails.appendChild(right)

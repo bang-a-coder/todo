@@ -6,15 +6,15 @@ import {Task} from './task.js'
 let dom = new DomCreator()
 let index = 0
 
-dom.createButton.addEventListener('click', () => {god()})
+dom.createTaskBtn.addEventListener('click', () => {god()})
 
 function god(){
     index++
-    let a = new Task(index)
+    let a = new Task(index, dom.newTaskTitle.innerHTML)
     dom.add(a)
+    dom.newTaskTitle.innerHTML = ''
     console.log(dom.taskList)
     
 }
 
-god()
 

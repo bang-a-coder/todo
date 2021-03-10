@@ -72,7 +72,7 @@ h1 {
         }
 
         &-title {
-            margin-left: 5px;
+            margin-left: 20px;
         }
 
         .top-details {
@@ -127,6 +127,15 @@ h1 {
 
             }
 
+            &-new {
+                @extend .textarea;
+                width: fit-content;
+                min-width: 250px;
+                min-height: 0;
+                margin-top: 0;
+                
+            }
+
             
         }
 
@@ -134,7 +143,12 @@ h1 {
             content: "Description";
             color: gray;
           }
+        .textarea-new[contenteditable]:empty::before {
+            content: "Title";
+            color: gray;
+          }
     }
+
     .expand {
         height: fit-content;
         min-height: 100px;
@@ -151,6 +165,10 @@ h1 {
         border: 1px solid rgb(187, 187, 187);
         border-radius: 5px;
 
+    }
+
+    .create-task {
+        margin-bottom: 20px;
     }
 }
 
