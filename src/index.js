@@ -14,7 +14,12 @@ function god(){
     dom.add(a)
     a.createTaskVisual(dom.displayArea)
     dom.newTaskTitle.innerHTML = ''
+    a.completeBtn.addEventListener('click', function() {
+        dom.remove(a.indexVal)
+
     console.log(dom.taskList)
+
+    })
     
 }
 
