@@ -143,7 +143,7 @@ h1 {
             color: gray;
           }
         .textarea-new[contenteditable]:empty::before {
-            content: "Title";
+            content: "New Task";
             color: gray;
           }
     }
