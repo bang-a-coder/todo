@@ -27,7 +27,7 @@ function god(){
         task.descriptionDiv.classList.add('displayN')
         task.domInstanse.classList.remove('expand')
 
-        dom.updateDescription(task.indexVal, task.descriptionDiv.innerHTML)
+        dom.updateDescription(task.indexVal,  task.titleDiv.innerHTML,task.descriptionDiv.innerHTML)
         console.log(task.description)
         console.log(dom.taskList)
 

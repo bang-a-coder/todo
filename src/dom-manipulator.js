@@ -15,10 +15,11 @@ class DomCreator {
         this.taskList.push(task)
     }
 
-    updateDescription(idxVal, description) {
+    updateDescription(idxVal, title, description) {
         const updateThis = this.taskList.find( task => task.indexVal === idxVal)
 
         updateThis.description = description
+        updateThis.title = title
     }
 
     remove(idxVal) {
