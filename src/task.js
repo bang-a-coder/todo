@@ -4,8 +4,10 @@ class Task {
         this.description = 'empty'
         this.indexVal = indexVal
 
+        this.domInstanse
         this.completeBtn
         this.saveButton
+        this.descriptionDiv
     }
 
 
@@ -47,20 +49,23 @@ class Task {
         descriptionDiv.classList.add('textarea', 'displayN')
             descriptionDiv.setAttribute('role', 'textbox')
             descriptionDiv.toggleAttribute('contenteditable')
+
+        this.descriptionDiv = descriptionDiv
         
 
         saveButton.classList.add('save-button', 'displayN')
             saveButton.innerHTML = 'Save'
-            saveButton.addEventListener('click', function() {
-                console.log('clicked')
-                console.log(typeof(descriptionDiv.innerHTML) + descriptionDiv.innerHTML)
-                this.description = descriptionDiv.innerHTML
-                saveButton.classList.add('displayN')
-                descriptionDiv.classList.add('displayN')
-                domInstanse.classList.remove('expand')
-                //domInstanse.addEventListener('click', expand)
-                console.log(this.description)
-            })
+
+            // saveButton.addEventListener('click', function() {
+            //     console.log('clicked')
+            //     console.log(typeof(descriptionDiv.innerHTML) + descriptionDiv.innerHTML)
+            //     this.description = descriptionDiv.innerHTML
+            //     saveButton.classList.add('displayN')
+            //     descriptionDiv.classList.add('displayN')
+            //     domInstanse.classList.remove('expand')
+            //     //domInstanse.addEventListener('click', expand)
+            //     console.log(this.description)
+            // })
 
         this.saveButton = saveButton
 
@@ -69,6 +74,8 @@ class Task {
         domInstanse.appendChild(descriptionDiv)
         domInstanse.appendChild(saveButton)
         domInstanse.addEventListener('click', expand)
+
+        this.domInstanse = domInstanse
         
             function expand(e){
                 if (e.target == domInstanse || e.target == topDetails) {

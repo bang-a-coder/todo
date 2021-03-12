@@ -15,6 +15,12 @@ class DomCreator {
         this.taskList.push(task)
     }
 
+    updateDescription(idxVal, description) {
+        const updateThis = this.taskList.find( task => task.indexVal === idxVal)
+
+        updateThis.description = description
+    }
+
     remove(idxVal) {
         this.taskList = this.taskList.filter(item => item.indexVal != idxVal)
         let ripDaddy = document.querySelector(`div[data-index="${idxVal}"]`);

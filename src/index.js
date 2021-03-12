@@ -14,7 +14,21 @@ function god(){
     dom.add(task)
     task.createTaskVisual(dom.displayArea)
     task.completeBtn.addEventListener('click', function() {
-        dom.remove(task.indexVal)
+            dom.remove(task.indexVal)
+            console.log(dom.taskList)
+
+    })
+
+    task.saveButton.addEventListener('click', function() {
+        console.log('clicked')
+        console.log('input is ' + task.descriptionDiv.innerHTML)
+        task.description = task.descriptionDiv.innerHTML
+        task.saveButton.classList.add('displayN')
+        task.descriptionDiv.classList.add('displayN')
+        task.domInstanse.classList.remove('expand')
+
+        dom.updateDescription(task.indexVal, task.descriptionDiv.innerHTML)
+        console.log(task.description)
         console.log(dom.taskList)
 
     })
