@@ -1,7 +1,7 @@
 class Task {
     constructor(indexVal, title){
         this.title = title
-        this.description = ''
+        this.description = 'empty'
         this.indexVal = indexVal
 
         this.completeBtn
@@ -53,6 +53,7 @@ class Task {
             saveButton.innerHTML = 'Save'
             saveButton.addEventListener('click', function() {
                 console.log('clicked')
+                console.log(typeof(descriptionDiv.innerHTML) + descriptionDiv.innerHTML)
                 this.description = descriptionDiv.innerHTML
                 saveButton.classList.add('displayN')
                 descriptionDiv.classList.add('displayN')
