@@ -65,6 +65,7 @@ h1 {
         margin-bottom: 5px;
         padding: 10px 20px 10px 8px;
         box-sizing: border-box;
+        position: relative;
 
         .check-icon {
             fill: #fff;
@@ -118,6 +119,8 @@ h1 {
         resize: none;
         margin-top: 20px;
         margin-left: 20px;
+        padding: 10px;
+        box-sizing: border-box;
 
             &:focus {
                 border: none;
@@ -128,6 +131,8 @@ h1 {
 
             &-new {
                 @extend .textarea;
+                box-sizing: content-box;
+                padding: 0;
                 width: fit-content;
                 min-width: 250px;
                 min-height: 0;
@@ -145,7 +150,29 @@ h1 {
         .textarea-new[contenteditable]:empty::before {
             content: "New Task";
             color: gray;
-          }
+        }
+
+        .save-button {
+            width: 80px;
+            height: 30px;
+            border: 1px solid #c2c2c2;
+            border-radius: 5px;
+            line-height: 30px;
+            text-align: center;
+            position: absolute;
+            right: 10px;
+            bottom: 10px;  
+            cursor: pointer;
+            
+            &:hover {
+                background-color: #8a8a8a;
+                color: rgb(0, 0, 0);
+                transition: all ease .2s;
+            }
+
+
+        }
+
     }
 
     .expand {

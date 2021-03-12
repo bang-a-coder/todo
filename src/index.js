@@ -10,11 +10,11 @@ dom.createTaskBtn.addEventListener('click', () => {god()})
 
 function god(){
     index++
-    let a = new Task(index, dom.newTaskTitle.innerHTML)
-    dom.add(a)
-    a.createTaskVisual(dom.displayArea)
-    a.completeBtn.addEventListener('click', function() {
-        dom.remove(a.indexVal)
+    let task = new Task(index, dom.newTaskTitle.innerHTML)
+    dom.add(task)
+    task.createTaskVisual(dom.displayArea)
+    task.completeBtn.addEventListener('click', function() {
+        dom.remove(task.indexVal)
         console.log(dom.taskList)
 
     })
