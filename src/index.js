@@ -30,6 +30,7 @@ function god(){
         dom.updateDescription(task.indexVal,  task.titleDiv.innerHTML,task.descriptionDiv.innerHTML)
         console.log(task.description)
         console.log(dom.taskList)
+        populateStorage()
 
     })
 
@@ -41,4 +42,20 @@ function god(){
     
 }
 
+
+if(!localStorage.getItem('domList')) {
+    populateStorage();
+  } else {
+    setStyles();
+  }
+
+function populateStorage(){
+    console.log('populate')
+    localStorage.setItem('domList', dom.taskList)
+}
+
+function setStyles(){
+    console.log('set')
+    dom.taskList = localStorage.getItem('domList')
+}
 
