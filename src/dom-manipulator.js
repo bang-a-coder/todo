@@ -1,3 +1,6 @@
+import {Task} from './task.js'
+
+
 class DomCreator {
     constructor(){
         this.displayArea = document.querySelector('.main')
@@ -13,6 +16,9 @@ class DomCreator {
 
     add(task){
         this.taskList.push(task)
+        console.log('runingin"')
+        localStorage.setItem('domList', JSON.stringify(this.taskList))
+        console.log(localStorage)
     }
 
     updateDescription(idxVal, title, description) {
@@ -26,6 +32,25 @@ class DomCreator {
         this.taskList = this.taskList.filter(item => item.indexVal != idxVal)
         let ripDaddy = document.querySelector(`div[data-index="${idxVal}"]`);
         ripDaddy.parentElement.removeChild(ripDaddy)
+        localStorage.setItem('domList', JSON.stringify(this.taskList))
+
+    }
+
+    render() {
+        console.log('render')
+
+        let data = JSON.parse(localStorage.getItem('domList')).map(e =>  Task.fromObj(e))
+
+
+        this.taskList = data
+        console.log(this.taskList)
+        this.taskList.forEach(e => {
+            console.log(e)
+            e.createTaskVisual(this.displayArea)
+        })
+
+
+
     }
     
     appendToMain(thing){

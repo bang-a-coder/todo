@@ -30,7 +30,7 @@ function god(){
         dom.updateDescription(task.indexVal,  task.titleDiv.innerHTML,task.descriptionDiv.innerHTML)
         console.log(task.description)
         console.log(dom.taskList)
-        populateStorage()
+        console.log(localStorage)
 
     })
 
@@ -42,20 +42,24 @@ function god(){
     
 }
 
+document.querySelector('.new-todo-button').addEventListener('click', ()=> {localStorage.removeItem('domList',console.log(localStorage))
+})
 
-if(!localStorage.getItem('domList')) {
-    populateStorage();
-  } else {
-    setStyles();
-  }
 
-function populateStorage(){
-    console.log('populate')
-    localStorage.setItem('domList', dom.taskList)
-}
 
-function setStyles(){
-    console.log('set')
-    dom.taskList = localStorage.getItem('domList')
-}
+console.log(localStorage)
+
+if(localStorage.getItem('domList')) {
+    dom.render()
+} 
+
+// function populateStorage(){
+//     console.log('populate')
+//     localStorage.setItem('domList', dom.taskList)
+// }
+
+// function setStyles(){
+//     console.log('set')
+//     dom.taskList = localStorage.getItem('domList')
+// }
 

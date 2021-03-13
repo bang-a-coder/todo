@@ -1,7 +1,7 @@
 class Task {
-    constructor(indexVal, title){
+    constructor(indexVal, title, description='empty'){
         this.title = title
-        this.description = 'empty'
+        this.description = description
         this.indexVal = indexVal
 
         this.domInstanse
@@ -9,6 +9,12 @@ class Task {
         this.completeBtn
         this.saveButton
         this.descriptionDiv
+    }
+
+    static fromObj(jason){
+        let taaask = new Task(jason.indexVal, jason.title, jason.description)
+        console.log(taaask)
+        return new Task(jason.indexVal, jason.title, jason.description)
     }
 
 
