@@ -37,20 +37,13 @@ class DomCreator {
     }
 
     render() {
-        console.log('render')
+        console.log('Rendering')
 
         let data = JSON.parse(localStorage.getItem('domList')).map(e =>  Task.fromObj(e))
 
-
         this.taskList = data
         console.log(this.taskList)
-        this.taskList.forEach(e => {
-            console.log(e)
-            e.createTaskVisual(this.displayArea)
-        })
-
-
-
+        this.taskList.forEach(e => {e.createTaskVisual(this.displayArea)})
     }
     
     appendToMain(thing){
