@@ -1,6 +1,10 @@
 import "./styles.scss";
 import {DomCreator} from './dom-manipulator.js'
 import {Task} from './task.js'
+import tippy from 'tippy.js';
+import 'tippy.js/dist/tippy.css'; // optional for styling
+
+
 
 
 let dom = new DomCreator()
@@ -50,3 +54,8 @@ document.querySelector('.new-todo-button').addEventListener('click', function(){
 if(localStorage.getItem('domList')) {
     dom.render()
 }
+
+
+tippy('#completeButton', {
+    content: 'Complete Button'
+})
