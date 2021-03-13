@@ -17,7 +17,7 @@ class DomCreator {
     add(task){
         this.taskList.push(task)
         console.log('runingin"')
-        localStorage.setItem('domList', JSON.stringify(this.taskList))
+        localStorage.setItem('domList', JSON.stringify(this.taskList))          // Update localStorage on change
         console.log(localStorage)
     }
 
@@ -32,7 +32,7 @@ class DomCreator {
         this.taskList = this.taskList.filter(item => item.indexVal != idxVal)
         let ripDaddy = document.querySelector(`div[data-index="${idxVal}"]`);
         ripDaddy.parentElement.removeChild(ripDaddy)
-        localStorage.setItem('domList', JSON.stringify(this.taskList))
+        localStorage.setItem('domList', JSON.stringify(this.taskList))          // Update localStorage on change
 
     }
 

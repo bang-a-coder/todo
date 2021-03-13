@@ -3,6 +3,7 @@ import {DomCreator} from './dom-manipulator.js'
 import {Task} from './task.js'
 import tippy from 'tippy.js';
 import 'tippy.js/dist/tippy.css'; // optional for styling
+import 'tippy.js/themes/light.css';
 
 
 
@@ -57,5 +58,13 @@ if(localStorage.getItem('domList')) {
 
 
 tippy('#completeButton', {
-    content: 'Complete Button'
+    content: 'Complete Button',
+    theme: 'light',
+
+})
+
+tippy('#saveButton', {
+    content: 'Save Button',
+    theme: 'light',
+
 })

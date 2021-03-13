@@ -56,6 +56,7 @@ class Task {
             descriptionDiv.toggleAttribute('contenteditable')
 
         saveButton.classList.add('save-button', 'displayN')
+            saveButton.id = 'saveButton'
             saveButton.innerHTML = 'Save'
 
         domInstanse.appendChild(topDetails)
